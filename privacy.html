@@ -61,12 +61,15 @@
       it. We use these to put your film in order and to show places and your route on a map.</li>
     <li><strong>Your choices.</strong> The format, music, and other settings you pick, and the photos you choose for your
       film.</li>
-    <li><strong>How our site is used.</strong> For each visit we note the kind of device and browser and the country,
-      region, and city it comes from. We don't keep your IP address. We keep only a scrambled form of it that can't be
-      turned back into the address, to share our servers fairly between people.</li>
+    <li><strong>How our site is used.</strong> For each visit we note the kind of device and browser, its screen size,
+      language and time zone, the site that sent you, and the country, region, and city it comes from. We don't keep your
+      IP address. We keep only a one-way scrambled form of it, made with a secret key, used only to share our servers
+      fairly between people.</li>
     <li><strong>One cookie.</strong> A random id in your browser, kept for a year, so the same browser takes its fair turn
-      in our queue. It holds nothing about you.</li>
-    <li><strong>What you write to us.</strong> If you send a suggestion, we keep its text.</li>
+      in our queue, and to make sure a Google sign-in returns to the browser that started it. It holds nothing about
+      you.</li>
+    <li><strong>What you write to us.</strong> If you send a suggestion, we keep its text, the screen you sent it from,
+      and your email address if you give one.</li>
   </ul>
 
   <h2>Photos from Google Photos</h2>
@@ -75,12 +78,13 @@
   <ul>
     <li>We ask Google only for permission to see the photos and videos you select
       (<code>photospicker.mediaitems.readonly</code>).</li>
-    <li>We download your selected photos and videos once, to create your film. We read the same details as for any
-      other photo: when and where it was taken.</li>
-    <li>We don't ask for lasting access to your Google account. The permission you give lasts only while your photos
-      are brought over, and we don't store it.</li>
-    <li>You can remove TaleMontage's access at any time in your Google Account, under Security, Your connections to
-      third-party apps &amp; services.</li>
+    <li>We download your selected photos and videos once, to create your film. We read when each one was taken. Google
+      doesn't send where they were taken, so a film made from photos you pick has no map of your route.</li>
+    <li>We don't ask for lasting access to your Google account. We use the permission only while bringing over the
+      photos and videos you selected, and we don't store the access token.</li>
+    <li>Google keeps a record that you allowed TaleMontage, so you aren't asked again next time. You can remove
+      TaleMontage's access at any time in your Google Account, under Security, Your connections to third-party apps
+      &amp; services.</li>
   </ul>
   <div class="note">
     <p>TaleMontage's use and transfer to any other app of information received from Google APIs will adhere to the
@@ -96,7 +100,8 @@
   <h2>How long we keep them</h2>
   <p>Your photos, videos, and film are automatically deleted from our servers 24 hours after your film is ready. You can
     delete them sooner: "Delete my photos now" on your film's page removes them at once. Your original album and your
-    Google Photos library are never changed.</p>
+    Google Photos library are never changed. We keep a short record of each film, without its photos, videos, or film,
+    for 30 days to help with support.</p>
 
   <h2>Who else handles your data</h2>
   <p>Our servers run the film creation themselves. Cloudflare carries the traffic between your browser and our servers.
