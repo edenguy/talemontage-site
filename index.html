@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07070a">
+<meta name="color-scheme" content="dark">
+<title>TaleMontage | Your trip, now a movie</title>
+<meta name="description" content="TaleMontage turns a shared photo album into a polished travel film, with captions, music, maps, and your real route. No editing required.">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TaleMontage">
+<meta property="og:title" content="TaleMontage | Your trip, now a movie">
+<meta property="og:description" content="Share a photo album, review the photos, and get a travel film with captions, music, and your real route.">
+<meta property="og:url" content="https://talemontage.com/">
+<meta property="og:image" content="https://talemontage.com/link-preview-square.jpg?v=014bb9cc08">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="1200">
+<meta property="og:image:alt" content="TaleMontage -- your trip, now a movie">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TaleMontage | Your trip, now a movie">
+<meta name="twitter:image" content="https://talemontage.com/link-preview-wide.jpg?v=83cd0d912f">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+  :root {
+    --bg:#07070a; --bg-2:#0c0c12; --surface:#131318; --surface-2:#191922;
+    --ink:#f4f1ea; --ink-dim:#c9c5bd; --muted:#8d8a95;
+    --gold:#f0b155; --gold-deep:#c98a2e; --violet:#8d7bf5; --violet-deep:#5b4bd6;
+    --line:rgba(255,255,255,.09); --line-strong:rgba(255,255,255,.17);
+    --r-lg:22px; --r-md:14px; --r-pill:999px;
+  }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body {
+    margin:0; min-height:100vh; color:var(--ink); font-family:"Manrope","Segoe UI",system-ui,sans-serif;
+    font-feature-settings:"ss01" 1; -webkit-font-smoothing:antialiased; line-height:1.6;
+    background:
+      radial-gradient(1100px 640px at 10% -8%, rgba(240,177,85,.16), transparent 60%),
+      radial-gradient(900px 680px at 102% 8%, rgba(141,123,245,.16), transparent 55%),
+      radial-gradient(1100px 800px at 50% 115%, rgba(141,123,245,.09), transparent 60%),
+      var(--bg);
+    background-attachment:fixed;
+  }
+  ::selection { background:var(--gold); color:#0b0b0f; }
+  a { color:var(--gold); }
+  .shell { width:min(1120px, calc(100% - 32px)); margin:auto; }
+  h1, h2 { font-family:"Fraunces",Georgia,serif; font-weight:500; }
+
+  .bar { display:flex; align-items:center; justify-content:space-between; padding:22px 0; }
+  .brand { display:flex; align-items:center; gap:10px; font-family:"Fraunces",Georgia,serif; font-size:1.4rem; text-decoration:none; color:var(--ink); }
+  .brand img { width:30px; height:30px; }
+  .brand em { color:var(--gold); font-style:normal; }
+  .bar nav { display:flex; align-items:center; gap:22px; }
+  .bar nav a.link { color:var(--ink-dim); text-decoration:none; font-weight:600; font-size:.92rem; }
+  .bar nav a.link:hover { color:var(--ink); }
+  @media (max-width:640px) { .bar nav a.link { display:none; } }
+
+  .btn {
+    display:inline-block; padding:14px 30px; border-radius:var(--r-pill); font-weight:800; text-decoration:none;
+    color:#0b0b0f; background:linear-gradient(135deg,var(--gold),var(--gold-deep));
+    box-shadow:0 10px 30px -10px rgba(240,177,85,.55); transition:transform .15s, box-shadow .15s;
+  }
+  .btn:hover { transform:translateY(-2px); box-shadow:0 14px 34px -10px rgba(240,177,85,.7); }
+  .btn.sm { padding:9px 20px; font-size:.9rem; box-shadow:none; }
+  .btn.ghost { background:none; color:var(--ink); border:1px solid var(--line-strong); box-shadow:none; }
+  .btn.ghost:hover { border-color:var(--gold); }
+
+  .hero { text-align:center; padding:70px 0 40px; }
+  .eyebrow { display:inline-block; color:var(--gold); font-weight:800; font-size:.78rem; letter-spacing:.18em; text-transform:uppercase; margin-bottom:16px; }
+  h1 { font-size:clamp(2.6rem,8vw,5rem); line-height:1.02; margin:0 0 20px; }
+  h1 em { color:var(--gold); font-style:italic; }
+  .lede { max-width:660px; margin:0 auto 32px; color:var(--ink-dim); font-size:1.15rem; }
+  .cta-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .services { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center; margin-top:30px; }
+  .services span { color:var(--ink-dim); font-size:.84rem; font-weight:600; margin-right:4px; }
+  .services img { width:34px; height:34px; padding:7px; border-radius:50%; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.35); }
+  .pills { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:34px; }
+  .pill { border:1px solid var(--line-strong); border-radius:var(--r-pill); padding:7px 16px; color:var(--ink-dim); font-size:.84rem; font-weight:600; background:rgba(255,255,255,.03); }
+  .pill::before { content:"\2713"; color:var(--gold); margin-right:8px; font-weight:800; }
+
+  section { padding:56px 0; }
+  .head { text-align:center; margin-bottom:34px; }
+  h2 { font-size:clamp(1.9rem,4.5vw,2.8rem); line-height:1.1; margin:0 0 12px; }
+  .sub { color:var(--ink-dim); max-width:640px; margin:0 auto; }
+  .grid { display:grid; gap:16px; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); }
+  .card {
+    background:linear-gradient(180deg,var(--surface),var(--bg-2)); border:1px solid var(--line);
+    border-radius:var(--r-lg); padding:26px;
+  }
+  .card .k { color:var(--gold); font-weight:800; font-size:.74rem; letter-spacing:.16em; text-transform:uppercase; }
+  .card h3 { margin:8px 0 8px; font-size:1.12rem; }
+  .card p { margin:8px 0 0; color:var(--ink-dim); font-size:.97rem; }
+  .steps .card .k { font-family:"Fraunces",Georgia,serif; font-size:2rem; letter-spacing:0; color:var(--violet); line-height:1; }
+
+  .band {
+    border:1px solid var(--line); border-radius:28px; padding:clamp(24px,5vw,54px);
+    background:
+      radial-gradient(600px 300px at 90% 0%, rgba(141,123,245,.22), transparent 70%),
+      radial-gradient(500px 300px at 0% 100%, rgba(240,177,85,.14), transparent 70%), var(--surface);
+  }
+  .band p.intro { margin:0; max-width:720px; color:var(--ink-dim); }
+  .band .grid { margin-top:26px; }
+  .band .card { background:rgba(7,7,10,.55); }
+
+  .checks { display:grid; gap:12px; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); }
+  .check { display:flex; gap:14px; padding:16px 18px; border:1px solid var(--line); border-radius:var(--r-md); background:var(--surface); }
+  .check .m { color:var(--gold); font-weight:800; }
+  .check b { display:block; }
+  .check span.d { color:var(--muted); font-size:.9rem; }
+
+  .privacy { text-align:center; }
+  .privacy p.intro { margin:0 auto; max-width:620px; }
+
+  .final { text-align:center; padding:80px 0 90px; }
+  .final .lede { margin-bottom:28px; }
+  footer { border-top:1px solid var(--line); padding:26px 0 44px; color:var(--muted); font-size:.82rem; display:flex; gap:14px; flex-wrap:wrap; justify-content:space-between; }
+  footer a { color:var(--ink-dim); }
+</style>
+</head>
+<body>
+<div class="shell">
+
+  <header class="bar">
+    <a class="brand" href="./"><img src="icon-192.png" alt="">Tale<em>Montage</em></a>
+    <nav>
+      <a class="link" href="#how">How it works</a>
+      <a class="link" href="#map">The map</a>
+      <a class="link" href="#control">Your control</a>
+      <a class="btn sm" href="https://app.talemontage.com">Open the app</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <span class="eyebrow">Automatic travel films</span>
+    <h1>Your trip,<br><em>now a movie.</em></h1>
+    <p class="lede">Turn a shared photo album into a polished travel film &mdash; with captions, music, maps, and your real route. No editing required.</p>
+    <div class="cta-row">
+      <a class="btn" href="https://app.talemontage.com">Create my film</a>
+      <a class="btn ghost" href="#how">See how it works</a>
+    </div>
+    <div class="services" role="group" aria-label="Works with albums on">
+      <span>Works with</span>
+      <!-- providers:icons -->
+      <img src="service-google_photos.svg" alt="Google Photos" title="Google Photos" width="34" height="34">
+      <img src="service-icloud.svg" alt="iCloud" title="iCloud" width="34" height="34">
+      <img src="service-google_drive.svg" alt="Google Drive" title="Google Drive" width="34" height="34">
+      <img src="service-onedrive.svg" alt="OneDrive" title="OneDrive" width="34" height="34">
+      <img src="service-dropbox.svg" alt="Dropbox" title="Dropbox" width="34" height="34">
+      <img src="service-amazon_photos.svg" alt="Amazon Photos" title="Amazon Photos" width="34" height="34">
+      <!-- /providers:icons -->
+    </div>
+    <div class="pills">
+      <span class="pill">For the TV or your phone</span>
+      <span class="pill">Royalty-free music included</span>
+      <span class="pill">Your originals stay untouched</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="grid">
+      <div class="card"><span class="k">Your best moments</span><p>The sharpest photos and the liveliest part of each video, day by day. Blurry shots and near-duplicates stay out.</p></div>
+      <div class="card"><span class="k">Your story, told</span><p>Your album&rsquo;s own notes become captions, with place names drawn from your photos.</p></div>
+      <div class="card"><span class="k">Music that fits</span><p>A royalty-free soundtrack from start to finish, or your own music.</p></div>
+      <div class="card"><span class="k">Film or photo dump</span><p>A full travel film, a fast 20-second reel cut to the beat, or a film that opens with that reel.</p></div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="head">
+      <span class="eyebrow">How it works</span>
+      <h2>From album link to finished film</h2>
+    </div>
+    <div class="grid steps">
+      <div class="card"><span class="k">1</span><h3>Share your album</h3><p>Paste a shared album link from <!-- providers:names -->Google Photos, iCloud, Google Drive, OneDrive, Dropbox, or Amazon Photos<!-- /providers:names -->.</p></div>
+      <div class="card"><span class="k">2</span><h3>Review your photos</h3><p>TaleMontage chooses the strongest moments. You decide what stays.</p></div>
+      <div class="card"><span class="k">3</span><h3>Get your film</h3><p>A finished travel film, ready to watch or share.</p></div>
+    </div>
+  </section>
+
+  <section id="map">
+    <div class="band">
+      <span class="eyebrow">The map</span>
+      <h2>Your real route, not just a slideshow</h2>
+      <p class="intro">Every day opens on a map of where you went. The film ends on your whole trip, drawn across a real map with the kilometers, days, and countries covered.</p>
+      <div class="grid">
+        <div class="card"><span class="k">Every day</span><h3>A map, not a title card</h3><p>Yesterday&rsquo;s route already drawn, today&rsquo;s drawn in fresh.</p></div>
+        <div class="card"><span class="k">The finale</span><h3>The whole trip</h3><p>Your complete route, animated from start to finish.</p></div>
+        <div class="card"><span class="k">Your style</span><h3>Maps that fit your film</h3><p>Choose the look of your maps, previewed on your own trip.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="control">
+    <div class="head">
+      <span class="eyebrow">Your control</span>
+      <h2>You&rsquo;re in control</h2>
+      <p class="sub">TaleMontage makes the first cut. You review the photos and decide what stays.</p>
+    </div>
+    <div class="grid">
+      <div class="card"><span class="k">Review your photos</span><p>See every photo and video, grouped by day. Choose which moments to include.</p></div>
+      <div class="card"><span class="k">Length and pace</span><p>Choose how many photos to include and how long each one stays on screen.</p></div>
+      <div class="card"><span class="k">Style and music</span><p>Soft crossfades and gentle motion, the soundtrack you like, or your own music.</p></div>
+      <div class="card"><span class="k">Change it later</span><p>Not happy with the finished film? Change the photos or swap the music and create it again.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="head">
+      <h2>Every film includes</h2>
+    </div>
+    <div class="checks">
+      <div class="check"><span class="m">&#10003;</span><div><b>Every moment once</b><span class="d">no photo or clip is repeated</span></div></div>
+      <div class="check"><span class="m">&#10003;</span><div><b>The liveliest part of each video</b><span class="d">long clips trimmed to their most active moment</span></div></div>
+      <div class="check"><span class="m">&#10003;</span><div><b>Music from start to finish</b><span class="d">royalty-free, credited at the end</span></div></div>
+      <div class="check"><span class="m">&#10003;</span><div><b>A title card for your trip</b><span class="d">your album&rsquo;s name and cover photo</span></div></div>
+      <div class="check"><span class="m">&#10003;</span><div><b>Places throughout your film</b><span class="d">location names from your album&rsquo;s photo data</span></div></div>
+      <div class="check"><span class="m">&#10003;</span><div><b>Your route on a real map</b><span class="d">day by day, and the whole trip at the end</span></div></div>
+    </div>
+  </section>
+
+  <section class="privacy">
+    <div class="band">
+      <span class="eyebrow">Privacy</span>
+      <h2>Your photos stay yours.</h2>
+      <p class="intro">Your original album is never changed. Your photos, videos, and film are automatically deleted from our servers 24 hours after your film is ready.</p>
+    </div>
+  </section>
+
+  <section class="final">
+    <h2>Share one album, get your film</h2>
+    <p class="lede">Paste a shared album link. We&rsquo;ll do the editing.</p>
+    <a class="btn" href="https://app.talemontage.com">Create my film</a>
+  </section>
+
+  <footer>
+    <span>TaleMontage &middot; Automatic travel films</span>
+    <span>Your original photos and videos are never changed &middot; <a href="https://app.talemontage.com">app.talemontage.com</a></span>
+  </footer>
+
+</div>
+</body>
+</html>
