@@ -10,10 +10,12 @@
 <link rel="canonical" href="https://talemontage.com/terms.html">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="preload" href="fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="manrope.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face { font-family:"Fraunces"; font-style:normal; font-weight:300 600; font-display:swap; src:url(fraunces.woff2) format("woff2"); }
+  @font-face { font-family:"Fraunces"; font-style:italic; font-weight:400 500; font-display:swap; src:url(fraunces-italic.woff2) format("woff2"); }
+  @font-face { font-family:"Manrope"; font-style:normal; font-weight:400 800; font-display:swap; src:url(manrope.woff2) format("woff2"); }
   :root {
     --bg:#07070a; --surface:#131318; --ink:#f4f1ea; --ink-dim:#c9c5bd; --muted:#8d8a95;
     --gold:#f0b155; --line:rgba(255,255,255,.09);
@@ -56,9 +58,10 @@
 <body>
 <div class="shell">
   <div class="bar">
-    <a class="brand" href="./"><img src="icon-192.png" alt="">Tale<em>Montage</em></a>
+    <a class="brand" href="./"><img src="brand-mark.png" alt="" width="30" height="30">Tale<em>Montage</em></a>
     <a href="https://app.talemontage.com">Create my film</a>
   </div>
+<main>
   <h1>Terms and Conditions</h1>
   <p class="updated">Effective October 5, 2026</p>
 
@@ -118,7 +121,9 @@
   </div>
 
   <h2>Refunds</h2>
-  <p>Our <a href="refunds.html">Refund Policy</a> is part of these terms.</p>
+  <p>Our <a href="refunds.html">Refund Policy</a> is part of these terms: a refund may be requested within
+    14 calendar days of the purchase. A refund ends access to that film, and its files are deleted
+    from our servers.</p>
 
   <h2>Music in your film</h2>
   <p>The music TaleMontage provides is royalty-free and is credited at the end of your film where its
@@ -137,7 +142,7 @@
     be available or free of faults. Nothing in these terms takes away rights the law gives you as a consumer.</p>
 
   <h2>Our responsibility to you</h2>
-  <p>If we fail to give you what you bought, you are entitled to a refund under our Refund Policy. To the extent
+  <p>If we fail to give you what you bought, write to us and we will put it right or refund you. To the extent
     the law allows, we are not responsible for indirect losses, or for the loss of photos and videos: your originals
     stay with you and with your album, and you should keep them. Our total responsibility for any claim is limited
     to the amount you paid for the film it concerns.</p>
@@ -157,8 +162,9 @@
   <h2>Contact</h2>
   <p>Questions about these terms: <a href="mailto:support@talemontage.com">support@talemontage.com</a></p>
 
+</main>
   <footer>
-    <span>TaleMontage &middot; Automatic travel films</span>
+    <span>TaleMontage &middot; Automatic movie maker</span>
     <a href="./">Home</a>
     <a href="./#pricing">Pricing</a>
     <a href="terms.html">Terms</a>

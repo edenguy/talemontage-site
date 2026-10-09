@@ -22,10 +22,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="TaleMontage | Turn your photos and videos into a movie">
 <meta name="twitter:image" content="https://talemontage.com/link-preview-wide.jpg?v=83cd0d912f">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Manrope:wght@400;500;600;700;800&display=swap">
+<link rel="preload" href="fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="manrope.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face { font-family:"Fraunces"; font-style:normal; font-weight:300 600; font-display:swap; src:url(fraunces.woff2) format("woff2"); }
+  @font-face { font-family:"Fraunces"; font-style:italic; font-weight:400 500; font-display:swap; src:url(fraunces-italic.woff2) format("woff2"); }
+  @font-face { font-family:"Manrope"; font-style:normal; font-weight:400 800; font-display:swap; src:url(manrope.woff2) format("woff2"); }
   :root {
     --bg:#07070a; --bg-2:#0c0c12; --surface:#131318; --surface-2:#191922;
     --ink:#f4f1ea; --ink-dim:#c9c5bd; --muted:#8d8a95;
@@ -65,7 +67,7 @@
     box-shadow:0 10px 30px -10px rgba(240,177,85,.55); transition:transform .15s, box-shadow .15s;
   }
   .btn:hover { transform:translateY(-2px); box-shadow:0 14px 34px -10px rgba(240,177,85,.7); }
-  .btn.sm { padding:9px 20px; font-size:.9rem; box-shadow:none; }
+  .btn.sm { padding:12px 20px; font-size:.9rem; box-shadow:none; }
   .btn.ghost { background:none; color:var(--ink); border:1px solid var(--line-strong); box-shadow:none; }
   .btn.ghost:hover { border-color:var(--gold); }
 
@@ -75,9 +77,14 @@
   h1 em { color:var(--gold); font-style:italic; }
   .lede { max-width:660px; margin:0 auto 32px; color:var(--ink-dim); font-size:1.15rem; }
   .cta-row { display:flex; gap:14px; justify-content:center; flex-wrap:wrap; }
+  .offer { margin:18px 0 0; color:var(--ink-dim); font-size:.95rem; }
   .services { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center; margin-top:30px; }
-  .services span { color:var(--ink-dim); font-size:.84rem; font-weight:600; margin-right:4px; }
+  .services > span { color:var(--ink-dim); font-size:.84rem; font-weight:600; margin-right:4px; }
   .services img { width:34px; height:34px; padding:7px; border-radius:50%; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,.35); }
+  /* Each service is a link into the app on that service. */
+  .services a.service { display:flex; flex-direction:column; align-items:center; gap:6px; min-width:84px; min-height:44px; padding:10px 8px 8px; border:1px solid rgba(255,255,255,.14); border-radius:16px; background:rgba(255,255,255,.04); color:var(--ink); font-size:.78rem; font-weight:600; text-decoration:none; transition:transform .12s ease, border-color .12s ease; }
+  .services a.service:hover { border-color:rgba(255,255,255,.4); transform:translateY(-1px); }
+  .services a.service:focus-visible { outline:3px solid #ffc25e; outline-offset:2px; }
   .pills { display:flex; gap:10px; flex-wrap:wrap; justify-content:center; margin-top:34px; }
   .pill { border:1px solid var(--line-strong); border-radius:var(--r-pill); padding:7px 16px; color:var(--ink-dim); font-size:.84rem; font-weight:600; background:rgba(255,255,255,.03); }
   .pill::before { content:"\2713"; color:var(--gold); margin-right:8px; font-weight:800; }
@@ -126,7 +133,7 @@
 <div class="shell">
 
   <header class="bar">
-    <a class="brand" href="./"><img src="icon-192.png" alt="">Tale<em>Montage</em></a>
+    <a class="brand" href="./"><img src="brand-mark.png" alt="" width="30" height="30">Tale<em>Montage</em></a>
     <nav>
       <a class="link" href="#how">How it works</a>
       <a class="link" href="#map">The map</a>
@@ -138,6 +145,7 @@
     </nav>
   </header>
 
+  <main>
   <section class="hero">
     <span class="eyebrow">Automatic movie maker</span>
     <h1>Your photos and videos,<br><em>now a movie.</em></h1>
@@ -146,15 +154,18 @@
       <a class="btn" href="https://app.talemontage.com">Create my film</a>
       <a class="btn ghost" href="#how">See how it works</a>
     </div>
+    <!-- business:offer -->
+    <p class="offer">Free to create and watch. $12.99 only if you want to keep it.</p>
+<!-- /business:offer -->
     <div class="services" role="group" aria-label="Works with albums on">
       <span>Works with</span>
       <!-- providers:icons -->
-      <img src="service-google_photos.svg" alt="Google Photos" title="Google Photos" width="34" height="34">
-      <img src="service-icloud.svg" alt="iCloud" title="iCloud" width="34" height="34">
-      <img src="service-google_drive.svg" alt="Google Drive" title="Google Drive" width="34" height="34">
-      <img src="service-onedrive.svg" alt="OneDrive" title="OneDrive" width="34" height="34">
-      <img src="service-dropbox.svg" alt="Dropbox" title="Dropbox" width="34" height="34">
-      <img src="service-amazon_photos.svg" alt="Amazon Photos" title="Amazon Photos" width="34" height="34">
+      <a class="service" href="https://app.talemontage.com/?source=google_photos" title="Add your photos from Google Photos"><img src="service-google_photos.svg" alt="" width="34" height="34"><span>Google Photos</span></a>
+      <a class="service" href="https://app.talemontage.com/?source=icloud" title="Add your photos from iCloud"><img src="service-icloud.svg" alt="" width="34" height="34"><span>iCloud</span></a>
+      <a class="service" href="https://app.talemontage.com/?source=google_drive" title="Add your photos from Google Drive"><img src="service-google_drive.svg" alt="" width="34" height="34"><span>Google Drive</span></a>
+      <a class="service" href="https://app.talemontage.com/?source=onedrive" title="Add your photos from OneDrive"><img src="service-onedrive.svg" alt="" width="34" height="34"><span>OneDrive</span></a>
+      <a class="service" href="https://app.talemontage.com/?source=dropbox" title="Add your photos from Dropbox"><img src="service-dropbox.svg" alt="" width="34" height="34"><span>Dropbox</span></a>
+      <a class="service" href="https://app.talemontage.com/?source=amazon_photos" title="Add your photos from Amazon Photos"><img src="service-amazon_photos.svg" alt="" width="34" height="34"><span>Amazon Photos</span></a>
       <!-- /providers:icons -->
     </div>
     <div class="pills">
@@ -167,9 +178,9 @@
   <section>
     <div class="grid">
       <div class="card"><span class="k">Your best moments</span><p>The sharpest photos and the liveliest part of each video, day by day. Blurry shots and near-duplicates stay out.</p></div>
-      <div class="card"><span class="k">Your story, told</span><p>Your album&rsquo;s own notes become captions, with place names drawn from your photos.</p></div>
+      <div class="card"><span class="k">Your story, told</span><p>Notes written in your album become captions, and place names come from your photos&rsquo; locations.</p></div>
       <div class="card"><span class="k">Music that fits</span><p>A royalty-free soundtrack from start to finish, or your own music.</p></div>
-      <div class="card"><span class="k">Film, photo dump or best photos</span><p>A film tells the whole story with day cards, maps, and captions, and can open with a 20-second teaser. A photo dump is a fast, music-driven reel. Or take just your best photos, ready to share.</p></div>
+      <div class="card"><span class="k">Film, photo dump or best photos</span><p>A film tells the whole story with day cards, maps, and captions, and can open with a 20-second teaser. A photo dump is a fast, 20-second reel cut to the music. Or take just your best photos, one of each look-alike, ready to share.</p></div>
     </div>
   </section>
 
@@ -189,7 +200,8 @@
     <div class="band">
       <span class="eyebrow">The map</span>
       <h2>Your real route, not just a slideshow</h2>
-      <p class="intro">Every day opens on a map of where you went. The film ends on your whole trip, drawn across a real map with the kilometers, days, and countries covered.</p>
+      <p class="intro">When your photos carry their location, every day opens on a map of where you went. The film ends on your whole trip, drawn across a real map with the kilometers, days, and countries covered.</p>
+      <p class="intro" style="margin-top:12px">Photos picked from Google Photos arrive without location, because Google removes it. To keep your maps, share the album as a link instead.</p>
       <div class="grid">
         <div class="card"><span class="k">Every day</span><h3>A map, not a title card</h3><p>Yesterday&rsquo;s route already drawn, today&rsquo;s drawn in fresh.</p></div>
         <div class="card"><span class="k">The finale</span><h3>The whole trip</h3><p>Your complete route, animated from start to finish.</p></div>
@@ -220,9 +232,9 @@
       <div class="check"><span class="m">&#10003;</span><div><b>Every moment once</b><span class="d">no photo or clip is repeated</span></div></div>
       <div class="check"><span class="m">&#10003;</span><div><b>The liveliest part of each video</b><span class="d">long clips cut to the stretch with the most movement, or the part you choose</span></div></div>
       <div class="check"><span class="m">&#10003;</span><div><b>Music from start to finish</b><span class="d">royalty-free, credited at the end</span></div></div>
-      <div class="check"><span class="m">&#10003;</span><div><b>A title card for your trip</b><span class="d">your album&rsquo;s name and cover photo</span></div></div>
-      <div class="check"><span class="m">&#10003;</span><div><b>Places throughout your film</b><span class="d">location names from your album&rsquo;s photo data</span></div></div>
-      <div class="check"><span class="m">&#10003;</span><div><b>Your route on a real map</b><span class="d">day by day, and the whole trip at the end</span></div></div>
+      <div class="check"><span class="m">&#10003;</span><div><b>A title card for your album</b><span class="d">your album&rsquo;s name and cover photo</span></div></div>
+      <div class="check"><span class="m">&#10003;</span><div><b>Places throughout your film</b><span class="d">location names, when your photos carry their location</span></div></div>
+      <div class="check"><span class="m">&#10003;</span><div><b>Your route on a real map</b><span class="d">for photos with a location: day by day, and the whole trip at the end</span></div></div>
     </div>
   </section>
 
@@ -232,14 +244,14 @@
       <span class="eyebrow">Pricing</span>
       <h2>Create and preview for free</h2>
       <p class="intro">See your finished film before you pay. Love it? Download the full-quality version for
-        <strong>$12.99</strong>. One trip, one price. Not a subscription.</p>
+        <strong>$12.99</strong>. One album, one price. Not a subscription.</p>
       <div class="grid">
         <div class="card"><span class="k">Free</span><h3>Your whole film, to watch</h3><p>Create your film and watch
           all of it in your browser, with a TaleMontage watermark. No card needed, and nothing owed if it
           isn&rsquo;t for you.</p></div>
         <div class="card"><span class="k">$12.99</span><h3>Yours to keep</h3><p>The full-quality film
           without the watermark, to download and share, ready the moment you pay. Any tax is included.</p></div>
-        <div class="card"><span class="k">Included</span><h3>The whole trip</h3><p>A photo dump, your best photos,
+        <div class="card"><span class="k">Included</span><h3>The whole album</h3><p>A photo dump, your best photos,
           and the other orientation, made when you ask, and up to 3 changes to photos or
           music. Available to download for 7 days after purchase, or 30 if
           you choose to have your media kept.</p></div>
@@ -261,6 +273,8 @@
     <p class="lede">Pick from <!-- providers:picks -->Google Photos<!-- /providers:picks --> or share an album. We&rsquo;ll do the editing.</p>
     <a class="btn" href="https://app.talemontage.com">Create my film</a>
   </section>
+
+  </main>
 
   <footer>
     <span>TaleMontage &middot; Automatic movie maker</span>

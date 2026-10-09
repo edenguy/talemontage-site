@@ -10,10 +10,12 @@
 <link rel="canonical" href="https://talemontage.com/contact.html">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="preload" href="fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="manrope.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face { font-family:"Fraunces"; font-style:normal; font-weight:300 600; font-display:swap; src:url(fraunces.woff2) format("woff2"); }
+  @font-face { font-family:"Fraunces"; font-style:italic; font-weight:400 500; font-display:swap; src:url(fraunces-italic.woff2) format("woff2"); }
+  @font-face { font-family:"Manrope"; font-style:normal; font-weight:400 800; font-display:swap; src:url(manrope.woff2) format("woff2"); }
   :root {
     --bg:#07070a; --surface:#131318; --ink:#f4f1ea; --ink-dim:#c9c5bd; --muted:#8d8a95;
     --gold:#f0b155; --line:rgba(255,255,255,.09);
@@ -56,9 +58,10 @@
 <body>
 <div class="shell">
   <div class="bar">
-    <a class="brand" href="./"><img src="icon-192.png" alt="">Tale<em>Montage</em></a>
+    <a class="brand" href="./"><img src="brand-mark.png" alt="" width="30" height="30">Tale<em>Montage</em></a>
     <a href="https://app.talemontage.com">Create my film</a>
   </div>
+<main>
   <h1>Contact</h1>
   <p class="updated">We read every message.</p>
 
@@ -80,8 +83,9 @@
   <h2>Who we are</h2>
   <p>TaleMontage is a product of SAID2020 LLC.<br>919 Lorien Drive, Ambler, PA 19002</p>
 
+</main>
   <footer>
-    <span>TaleMontage &middot; Automatic travel films</span>
+    <span>TaleMontage &middot; Automatic movie maker</span>
     <a href="./">Home</a>
     <a href="./#pricing">Pricing</a>
     <a href="terms.html">Terms</a>

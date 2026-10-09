@@ -10,10 +10,12 @@
 <link rel="canonical" href="https://talemontage.com/refunds.html">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="preload" href="fraunces.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="manrope.woff2" as="font" type="font/woff2" crossorigin>
 <style>
+  @font-face { font-family:"Fraunces"; font-style:normal; font-weight:300 600; font-display:swap; src:url(fraunces.woff2) format("woff2"); }
+  @font-face { font-family:"Fraunces"; font-style:italic; font-weight:400 500; font-display:swap; src:url(fraunces-italic.woff2) format("woff2"); }
+  @font-face { font-family:"Manrope"; font-style:normal; font-weight:400 800; font-display:swap; src:url(manrope.woff2) format("woff2"); }
   :root {
     --bg:#07070a; --surface:#131318; --ink:#f4f1ea; --ink-dim:#c9c5bd; --muted:#8d8a95;
     --gold:#f0b155; --line:rgba(255,255,255,.09);
@@ -56,47 +58,26 @@
 <body>
 <div class="shell">
   <div class="bar">
-    <a class="brand" href="./"><img src="icon-192.png" alt="">Tale<em>Montage</em></a>
+    <a class="brand" href="./"><img src="brand-mark.png" alt="" width="30" height="30">Tale<em>Montage</em></a>
     <a href="https://app.talemontage.com">Create my film</a>
   </div>
+<main>
   <h1>Refund Policy</h1>
   <p class="updated">Effective October 5, 2026</p>
 
-  <p>You watch your whole film before you pay, so you know what you're buying. This page says when you get your
-    money back.</p>
+  <p>Refund requests may be submitted within 14 calendar days of purchase.</p>
 
-  <h2>When we refund you</h2>
-  <ul>
-    <li><strong>If we fail to give you what you bought,</strong> we refund you in full, automatically. You don't
-      need to ask.</li>
-    <li><strong>If your film has a real defect we can't fix,</strong> we refund you. Write to us and tell us what's
-      wrong.</li>
-    <li><strong>If the law gives you a right to cancel or to a refund,</strong> that right applies. It is set out in
-      Paddle's <a href="https://www.paddle.com/legal/buyer-terms">Buyer Terms</a> and
-      <a href="https://www.paddle.com/legal/refund-policy">Refund Policy</a>, which Paddle keeps current for
-      each country.</li>
-  </ul>
+  <p>Paddle, our Merchant of Record, handles payments and refund requests in accordance with
+    <a href="https://www.paddle.com/legal/refund-policy">Paddle's Refund Policy</a>. Submitting a request
+    does not guarantee a discretionary refund. Applicable statutory consumer rights remain unaffected.</p>
 
-  <h2>Other requests</h2>
-  <p>Our orders are processed by Paddle, the Merchant of Record. Any other refund request is
-    handled by Paddle under its
-    <a href="https://www.paddle.com/legal/refund-policy">Refund Policy</a>. A request that is fraud or abuse may be refused, as
-    that policy says.</p>
+  <p>To request a refund, visit
+    <a href="https://paddle.net">paddle.net</a>, or write to us at
+    <a href="mailto:support@talemontage.com">support@talemontage.com</a> with the email address you bought with.</p>
 
-  <h2>What a refund does</h2>
-  <p>A refund ends access to that film. Its files are removed from our servers, and no more changes or downloads are
-    possible.</p>
-
-  <h2>How to ask</h2>
-  <ul>
-    <li>Use the link in your receipt, or look up your order at
-      <a href="https://paddle.net">paddle.net</a>.</li>
-    <li>Or write to us at <a href="mailto:support@talemontage.com">support@talemontage.com</a> with the email address
-      you bought with. We'll help.</li>
-  </ul>
-
+</main>
   <footer>
-    <span>TaleMontage &middot; Automatic travel films</span>
+    <span>TaleMontage &middot; Automatic movie maker</span>
     <a href="./">Home</a>
     <a href="./#pricing">Pricing</a>
     <a href="terms.html">Terms</a>
